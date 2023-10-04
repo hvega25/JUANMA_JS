@@ -1,6 +1,6 @@
 
 //convertir a hexa, octal y binario
-
+//función que llama a los 3 métodos que convierten
 function convertir_numeros (){
 
    
@@ -23,7 +23,10 @@ function convertir_numeros (){
             console.log(`El resultado es 0`)
             control = true;
         }
+
+
          /*
+         Este código muestra en pantalla y no en consola 
         //ya aplicado los validadores se procede a calcular
         let hexa_conv = hexadecimal_convertir (original).reverse().toString().replaceAll(`,`, "");
         mensaje_pantalla_hex.innerText = "El número hexadecimal es: " + hexa_conv;
@@ -39,11 +42,15 @@ function convertir_numeros (){
         */
         //variable que cambia para la salida
 
-        console.log(hexadecimal_convertir(original))
+        //código que muestra por consola 
 
-        console.log(binario(original))
+        let hexadec = hexadecimal_convertir(original);
+        let bin_conv = binario(original);
+        let oct_cn = octal(original);
 
-        console.log(octal(original))
+      
+
+        console.log(` El número original es: ${original}, el número en binario: ${bin_conv}, el número en hexadecimal es: ${hexadec}, el número en octal es: ${oct_cn}`)
 
         control = true;
         console.log("ADIOS");
@@ -76,8 +83,6 @@ function hexadecimal_convertir(original){
   
    }
 
-
-
     
    // while (original % 16 !=0){  este bucle genera errores
   
@@ -85,25 +90,33 @@ function hexadecimal_convertir(original){
 
 }
 
-
+//función que convierte el número original en número binario
 function binario (original){
+       //variable que guarda el número convertido
     var bin = ""
 
+    //ciclo que controla el resto del número calculado y que no sea bucle infinito
     while (original >= 1){
+        //esta linea guarda en octal el resto de la operación
         bin =  (original % 2) + bin
+            //operación donde el número original se calcula y empieza de nuevo el ciclo
         original = Math.trunc(original / 2);
        }
 
        return bin;
 }
 
-
+//función que convierte el número original en número octal
 function octal (original){
+
+    //variable que guarda el número convertido
     var octal = "";   
     
-
+//ciclo que controla el resto del número calculado
     while (original >= 1){
+        //esta linea guarda en octal el resto de la operación
         octal =  (original % 8) + octal
+        //operación donde el número original se calcula y empieza de nuevo el ciclo
         original = Math.trunc(original / 8);
        }
 
@@ -111,14 +124,19 @@ function octal (original){
 }
 
 
+function pruebas_principal (){
+   
+    
+}
 
-function pruebas (original){
+//funcion para hacer pruebas 
+function pruebas (original, base){
 
     var octal = "";   
 
- while (original >= 1){
-        octal =  (original % 8) + octal
-       original = Math.trunc(original / 8);
+ while (original >= base){
+        octal =  (original % base) + octal
+       original = Math.trunc(original / base);
        }
 
 
