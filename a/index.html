@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase JS</title>
+</head>
+<body>
+
+    <!---FUNCIONES USADAS-->
+    <!--- onclick , onmouseover -->
+    <!--<input id="inputPrueba" placeholder="Escribe algo"> </input>-->
+    <input id="inputNumero" placeholder="Escribe un numero"> </input>
+    <!----->
+    <button onclick="Tabla()"> Tócame</button>
+    <script> 
+   
+    //Primera función
+    function ImprimiendoConOprimir (){ 
+        alert("Hola");
+        
+    }
+
+    function ImprimiendoConColocarRaton(){ 
+        alert("Hola esto es algo");
+        
+    }
+
+
+    function obteniendoTexto(){
+        var elem = document.getElementById('inputPrueba').value;
+        alert(elem)
+    }
+
+    function Tabla (){
+      
+        let elem = document.getElementById('inputNumero').value;
+
+        if (elem < 1){
+            console.log("No se puede")
+        }else{
+            for(let n = 1; n <11 ; n++){
+            console.log(String(elem) ,String(" * "), String(n), String( " = " ) , elem * n)
+        }
+        }   
+    }
+
+    </script>
+</body>
+</html>
