@@ -24,3 +24,6 @@ let cambios ="";
  
   console.log(cambios)
 }
+
+
+//hacer esto
